@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Gaibandha — আমার জেলা, আমার শহর, আমার সেবা</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f5b3a;--g2:#174a2e;--lg:#e3f1e6;--ink:#16241b;--mut:#5b6b60;--bg:#fff;--n:#f4f6f3;--line:#dde4de;--amb:#9a6700;--ambbg:#fff4d6;--red:#b42318;--redbg:#fde8e6;--card:#fff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--g:#7ccf9a;--g2:#a4e0b9;--lg:#1d3326;--ink:#e8f0ea;--mut:#9fb0a4;--bg:#0f1712;--n:#16211a;--line:#26352b;--amb:#f2c35b;--ambbg:#3a2f10;--red:#ff9a8f;--redbg:#3c1815;--card:#141e17;color-scheme:dark}}
+:root[data-theme=dark]{--g:#7ccf9a;--g2:#a4e0b9;--lg:#1d3326;--ink:#e8f0ea;--mut:#9fb0a4;--bg:#0f1712;--n:#16211a;--line:#26352b;--amb:#f2c35b;--ambbg:#3a2f10;--red:#ff9a8f;--redbg:#3c1815;--card:#141e17;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 "Hind Siliguri","Noto Sans Bengali","Segoe UI",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--g);outline-offset:2px;border-radius:6px}
+.w{max-width:1120px;margin:0 auto;padding:0 16px}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:19px;color:var(--g)}
+nav{display:none;margin-left:auto;gap:4px}
+nav a{padding:6px 12px;border-radius:8px;font-weight:500;color:var(--mut)}
+nav a:hover{background:var(--lg);color:var(--g)}
+.tools{display:flex;gap:8px;margin-left:auto}
+nav+.tools{margin-left:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;border:1px solid var(--g);background:var(--g);color:#fff;font:600 15px inherit;font-family:inherit;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--g2)}
+.btn.o{background:transparent;color:var(--g)}.btn.o:hover{background:var(--lg)}
+.btn.s{min-height:40px;padding:0 12px}
+@media(prefers-color-scheme:dark){.btn:not(.o){color:#0f1712}}
+:root[data-theme=dark] .btn:not(.o){color:#0f1712}
+.demo{background:var(--ambbg);color:var(--amb);font-size:14px;text-align:center;padding:6px 16px}
+.hero{background:var(--lg);padding:36px 0 40px}
+.hero h1{font-size:clamp(28px,6vw,46px);line-height:1.3;font-weight:700;color:var(--g);max-width:16ch}
+.hero p.sub{margin:10px 0 22px;color:var(--mut);max-width:52ch;font-size:17px}
+.sr{display:flex;gap:8px;background:var(--card);border:2px solid var(--g);border-radius:14px;padding:6px 6px 6px 14px;align-items:center;max-width:680px}
+.sr input{flex:1;min-width:0;border:0;background:transparent;font:inherit;color:var(--ink);min-height:44px}
+.sr input:focus{outline:0}
+.tag{margin-top:12px;color:var(--g);font-weight:600}
+section{padding:36px 0}
+section.alt{background:var(--n)}
+h2{font-size:24px;line-height:1.35;margin-bottom:4px}
+.lead{color:var(--mut);margin-bottom:18px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:980px){.grid.cats{grid-template-columns:repeat(6,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;transition:border-color .15s,transform .15s}
+a.card:hover,button.card:hover{border-color:var(--g);transform:translateY(-2px)}
+.cat{display:flex;flex-direction:column;gap:8px;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
+.cat .ic{width:44px;height:44px;border-radius:12px;background:var(--lg);color:var(--g);display:grid;place-items:center}
+.cat b{font-size:16px;line-height:1.3}.cat small{color:var(--mut);line-height:1.4}
+.cat[aria-pressed=true]{border-color:var(--g);background:var(--lg)}
+.list{display:grid;gap:12px}
+@media(min-width:720px){.list{grid-template-columns:repeat(2,1fr)}}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.badge{display:inline-block;font-size:13px;padding:1px 10px;border-radius:99px;background:var(--ambbg);color:var(--amb);font-weight:500;white-space:nowrap}
+.badge.ok{background:var(--lg);color:var(--g)}.badge.no{background:var(--redbg);color:var(--red)}
+.meta{color:var(--mut);font-size:14px}
+.stars{color:var(--amb);display:inline-flex;gap:2px;align-items:center;font-weight:600;font-size:14px}.stars svg{width:15px;height:15px;fill:currentColor}
+.empty{padding:20px;border:1px dashed var(--line);border-radius:14px;color:var(--mut)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:500;font-size:14px}
+.em{display:grid;gap:12px}
+@media(min-width:720px){.em{grid-template-columns:repeat(3,1fr)}}
+.em a{display:flex;gap:12px;align-items:center;background:var(--redbg);border:1px solid transparent;border-radius:14px;padding:14px;color:var(--red)}
+.em a:hover{border-color:var(--red)}
+.em strong{font-size:28px;line-height:1.1;display:block}
+.cta{background:var(--g);color:#fff;border-radius:18px;padding:28px 22px;display:grid;gap:16px}
+.cta h2{color:#fff}.cta p{opacity:.9}
+.cta .btn{background:#fff;color:var(--g);border-color:#fff}.cta .btn.o{background:transparent;color:#fff}
+@media(min-width:720px){.cta{grid-template-columns:1fr auto;align-items:center}}
+footer{background:var(--n);border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:15px}
+footer .f{display:grid;gap:20px}
+@media(min-width:720px){footer .f{grid-template-columns:2fr 1fr 1fr}}
+footer h3{color:var(--ink);font-size:16px;margin-bottom:6px}
+footer a{display:block;padding:2px 0}footer a:hover{color:var(--g)}
+@media(min-width:900px){nav{display:flex}.tools{margin-left:8px}}
+@media(max-width:899px){#menu{display:inline-flex}nav.open{display:flex;position:absolute;left:0;right:0;top:64px;background:var(--bg);flex-direction:column;padding:8px 16px 14px;border-bottom:1px solid var(--line)}}
+#menu{display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="w bar">
+<a href="#top" class="logo" aria-label="My Gaibandha">
+<svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2C11.7 2 5 8.5 5 16.6 5 27 20 38 20 38s15-11 15-21.4C35 8.5 28.3 2 20 2z" fill="var(--g)"/><path d="M20 24.5l-5.2-5.1a3.6 3.6 0 0 1 5.2-5 3.6 3.6 0 0 1 5.2 5z" fill="var(--bg)"/></svg>
+<span>My Gaibandha</span></a>
+<nav id="nav" aria-label="Main"></nav>
+<div class="tools">
+<button class="btn o s" id="lang" aria-label="Language">EN</button>
+<button class="btn o s" id="theme" aria-label="Theme">◐</button>
+<button class="btn o s" id="menu" aria-label="Menu" aria-expanded="false">☰</button>
+</div></div></header>
+<div class="demo" id="demo"></div>
+<main id="top">
+<div class="hero"><div class="w">
+<h1 id="h1"></h1><p class="sub" id="sub"></p>
+<form class="sr" role="search" id="sf"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="q" type="search" aria-label="Search"><button class="btn" id="sb" type="submit"></button></form>
+<p class="tag" id="tag"></p>
+</div></div>
+<section id="services"><div class="w">
+<h2 id="t-cat"></h2><p class="lead" id="l-cat"></p>
+<div class="grid cats" id="cats"></div>
+<h2 style="margin-top:32px" id="t-pop"></h2><p class="lead" id="l-pop"></p>
+<div class="list" id="listing" aria-live="polite"></div>
+</div></section>
+<section class="alt" id="new"><div class="w">
+<h2 id="t-new"></h2><p class="lead" id="l-new"></p>
+<div class="grid c3" id="newp"></div>
+</div></section>
+<section id="reviews"><div class="w">
+<h2 id="t-rev"></h2><p class="lead" id="l-rev"></p>
+<div class="list" id="revs"></div>
+</div></section>
+<section class="alt" id="complaints"><div class="w">
+<h2 id="t-cmp"></h2><p class="lead" id="l-cmp"></p>
+<div class="list" id="cmps"></div>
+</div></section>
+<section id="transport"><div class="w">
+<h2 id="t-tr"></h2><p class="lead" id="l-tr"></p>
+<div class="card scroll"><table id="trt"></table></div>
+</div></section>
+<section class="alt" id="emergency"><div class="w">
+<h2 id="t-em"></h2><p class="lead" id="l-em"></p>
+<div class="em" id="ems"></div>
+</div></section>
+<section id="about"><div class="w"><div class="cta">
+<div><h2 id="t-cta"></h2><p id="l-cta"></p></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="c1"></button><button class="btn o" id="c2"></button></div>
+</div></div></section>
+</main>
+<footer><div class="w f">
+<div><div class="logo" style="margin-bottom:6px"><span>My Gaibandha</span></div><p id="f-about"></p></div>
+<div><h3 id="f-links"></h3><a href="#" id="f-priv"></a><a href="#" id="f-terms"></a><a href="#about" id="f-add"></a></div>
+<div><h3 id="f-contact"></h3><p id="f-mail"></p><p id="f-soc"></p></div>
+</div></footer>
+<script>
+var P={
+home:'<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+doc:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>',
+blood:'<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+food:'<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
+pin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
+edu:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+bus:'<path d="M8 6v6M16 6v6M2 12h19.6M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><circle cx="16" cy="18" r="2"/><path d="M9 18h5"/>',
+star:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
+flag:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/>',
+fire:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+shield:'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>'
+};
+function ic(n){return '<svg class="i" viewBox="0 0 24 24" aria-hidden="true">'+P[n]+'</svg>'}
+var T={
+bn:{nav:['হোম','সেবা','জনসাধারণের অভিযোগ','যাতায়াত','রিভিউ','পরিচিতি'],
+demo:'এই পেজের সব তথ্য ডেমো (নমুনা)। যাচাই করা তথ্য যোগ হলে এই চিহ্ন সরে যাবে। জরুরি নম্বরগুলো সরকারি।',
+h1:'গাইবান্ধার সব সেবা, এখন এক জায়গায়',sub:'ডাক্তার, রক্ত, খাবার, যাতায়াত, জরুরি যোগাযোগ ও স্থানীয় তথ্য খুঁজুন সহজেই।',
+ph:'কী খুঁজছেন? ডাক্তার, রেস্টুরেন্ট, বাসের সময়...',sb:'খুঁজুন',tag:'আমার জেলা, আমার শহর, আমার সেবা।',
+tcat:'সেবার ধরন',lcat:'একটি ধরন বেছে নিন, নিচে তালিকা বদলে যাবে।',tpop:'জনপ্রিয় স্থানীয় সেবা',lpop:'ডেমো তালিকা',
+all:'সব',none:'কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন বা সব ধরন দেখুন।',
+tnew:'নতুন যোগ হওয়া স্থান ও ব্যবসা',lnew:'ডেমো তথ্য',trev:'সর্বশেষ অনুমোদিত রিভিউ',lrev:'রিভিউ প্রকাশের আগে যাচাই করা হবে। (ডেমো)',
+tcmp:'সাম্প্রতিক জনসাধারণের অভিযোগ',lcmp:'প্রতিটি অভিযোগের বর্তমান অবস্থা দেখা যাবে। (ডেমো)',
+ttr:'যাতায়াত তথ্য',ltr:'সময়সূচি পরিবহন মালিক সমিতির নিশ্চিতকরণ ছাড়া প্রকাশ হবে না। নিচের সারিগুলো ডেমো।',
+th:['রুট','ধরন','সময়'],tem:'জরুরি যোগাযোগ',lem:'সরকারি জরুরি নম্বর। ফোন বোতামে চাপ দিলে সরাসরি কল হবে।',
+tcta:'রিভিউ লিখুন বা আপনার ব্যবসা যোগ করুন',lcta:'আপনার অভিজ্ঞতা অন্যদের সঠিক সিদ্ধান্ত নিতে সাহায্য করবে।',c1:'রিভিউ লিখুন',c2:'ব্যবসা যোগ করুন',
+fabout:'গাইবান্ধার মানুষের জন্য স্থানীয় সেবা, তথ্য ও পারস্পরিক সহায়তার প্ল্যাটফর্ম।',flinks:'লিংক',fpriv:'গোপনীয়তা নীতি',fterms:'শর্তাবলী',fadd:'ব্যবসা যোগ করুন',fcontact:'যোগাযোগ',fmail:'ইমেইল: (শীঘ্রই)',fsoc:'ফেসবুক · ইউটিউব (শীঘ্রই)',
+verified:'যাচাইকৃত',unv:'যাচাই বাকি',demoB:'ডেমো',call:'কল',
+cats:[['doc','ডাক্তার ও স্বাস্থ্য','চেম্বার, হাসপাতাল, ডায়াগনস্টিক'],['blood','রক্তদাতা','গ্রুপ ও উপজেলা অনুযায়ী'],['food','খাবার ও রেস্টুরেন্ট','রেস্টুরেন্ট, হোটেল, বেকারি'],['pin','দর্শনীয় স্থান','পার্ক, বাজার, ল্যান্ডমার্ক'],['phone','জরুরি যোগাযোগ','হাসপাতাল, অ্যাম্বুলেন্স, ফায়ার'],['edu','শিক্ষা প্রতিষ্ঠান','স্কুল, কলেজ, কোচিং']]},
+en:{nav:['Home','Services','Public Complaints','Transport','Reviews','About'],
+demo:'All content on this page is demo (sample) data until verified info is added. Emergency numbers shown are official.',
+h1:'All Gaibandha services, in one place',sub:'Find doctors, blood donors, food, transport, emergency contacts and local information with ease.',
+ph:'What are you looking for? Doctors, restaurants, bus times...',sb:'Search',tag:'My district, my town, my service.',
+tcat:'Service categories',lcat:'Pick a category and the list below updates.',tpop:'Popular local services',lpop:'Demo listings',
+all:'All',none:'Nothing found. Try another word or view all categories.',
+tnew:'Recently added places and businesses',lnew:'Demo data',trev:'Latest approved reviews',lrev:'Reviews are checked before they appear. (Demo)',
+tcmp:'Recent public complaints',lcmp:'Every complaint shows its current status. (Demo)',
+ttr:'Transport information',ltr:'Timetables are published only after confirmation from transport operators. Rows below are demo.',
+th:['Route','Type','Time'],tem:'Emergency contacts',lem:'Official government emergency numbers. Tap the call button to dial directly.',
+tcta:'Write a review or add your business',lcta:'Your experience helps others make better choices.',c1:'Write a review',c2:'Add a business',
+fabout:'A local platform for services, information and mutual help for the people of Gaibandha.',flinks:'Links',fpriv:'Privacy Policy',fterms:'Terms',fadd:'Add a business',fcontact:'Contact',fmail:'Email: coming soon',fsoc:'Facebook · YouTube (coming soon)',
+verified:'Verified',unv:'Not yet verified',demoB:'Demo',call:'Call',
+cats:[['doc','Doctors & Healthcare','Chambers, hospitals, diagnostics'],['blood','Blood Donors','By group and upazila'],['food','Food & Restaurants','Restaurants, hotels, bakeries'],['pin','Places to Visit','Parks, markets, landmarks'],['phone','Emergency Contacts','Hospitals, ambulance, fire'],['edu','Education','Schools, colleges, coaching']]}
+};
+var I=[
+{c:0,n:['ডা. নমুনা নাম (মেডিসিন)','Dr. Sample Name (Medicine)'],a:['গাইবান্ধা সদর','Gaibandha Sadar'],r:4.4},
+{c:0,n:['নমুনা ডায়াগনস্টিক সেন্টার','Sample Diagnostic Center'],a:['স্টেশন রোড','Station Road'],r:4.1},
+{c:1,n:['রক্তদাতা অনুসন্ধান (গ্রুপ ও উপজেলা)','Blood donor search (group & upazila)'],a:['সব উপজেলা','All upazilas'],r:0},
+{c:2,n:['নমুনা রেস্টুরেন্ট','Sample Restaurant'],a:['সদর','Sadar'],r:4.2},
+{c:2,n:['নমুনা বেকারি','Sample Bakery'],a:['পালপাড়া','Palpara'],r:4.0},
+{c:3,n:['নমুনা পার্ক','Sample Park'],a:['সদর','Sadar'],r:4.5},
+{c:5,n:['নমুনা স্কুল','Sample School'],a:['সদর','Sadar'],r:4.3},
+{c:5,n:['নমুনা কোচিং সেন্টার','Sample Coaching Center'],a:['সদর','Sadar'],r:3.9}
+];
+var C=[
+{n:['রাস্তার বাতি নষ্ট','Street light not working'],s:1},{n:['নর্দমা জমাট বেঁধে আছে','Blocked drain'],s:0},{n:['সড়কের গর্ত মেরামত','Pothole repair'],s:2}
+];
+var ST=[['জমা হয়েছে','Submitted','badge'],['পর্যালোচনায়','Under review','badge'],['সমাধান হয়েছে','Resolved','badge ok']];
+var RV=[
+{n:['নমুনা রেস্টুরেন্ট','Sample Restaurant'],t:['খাবারের মান ভালো ছিল, সেবা একটু ধীর। (ডেমো রিভিউ)','Food quality was good, service a bit slow. (demo review)'],r:4},
+{n:['নমুনা স্কুল','Sample School'],t:['ক্লাস নিয়মিত হয়, পরিবেশ ভালো। (ডেমো রিভিউ)','Classes run regularly, good environment. (demo review)'],r:5}
+];
+var TR=[[['গাইবান্ধা – ঢাকা','Gaibandha – Dhaka'],['বাস','Bus'],['সময় যাচাই বাকি','Time to be verified']],[['গাইবান্ধা – রংপুর','Gaibandha – Rangpur'],['বাস','Bus'],['সময় যাচাই বাকি','Time to be verified']],[['গাইবান্ধা – বগুড়া','Gaibandha – Bogura'],['ট্রেন/বাস','Train/Bus'],['সময় যাচাই বাকি','Time to be verified']]];
+var EM=[['phone','999',['জাতীয় জরুরি সেবা','National Emergency Service']],['fire','16163',['ফায়ার সার্ভিস','Fire Service']],['shield','109',['নারী ও শিশু সহায়তা হেল্পলাইন','Women & Child Helpline']]];
+var L='bn',cat=-1,q='';
+function $(i){return document.getElementById(i)}
+function stars(r){return r?'<span class="stars">'+ic('star')+r.toFixed(1)+'</span>':''}
+function card(x,i){var t=T[L],k=L=='bn'?0:1;
+return '<article class="card"><div class="row"><b>'+x.n[k]+'</b><span class="badge">'+t.demoB+'</span></div><p class="meta">'+t.cats[x.c][1]+' · '+x.a[k]+'</p><div class="row" style="margin-top:6px">'+stars(x.r)+'<span class="meta">'+t.unv+'</span></div></article>'}
+function render(){var t=T[L],k=L=='bn'?0:1;
+document.documentElement.lang=L;$('lang').textContent=L=='bn'?'EN':'বাং';
+var hs=['#top','#services','#complaints','#transport','#reviews','#about'];
+$('nav').innerHTML=hs.map(function(h,i){return '<a href="'+h+'">'+t.nav[i]+'</a>'}).join('');
+$('demo').textContent=t.demo;$('h1').textContent=t.h1;$('sub').textContent=t.sub;$('q').placeholder=t.ph;$('sb').textContent=t.sb;$('tag').textContent=t.tag;
+var m={'t-cat':'tcat','l-cat':'lcat','t-pop':'tpop','l-pop':'lpop','t-new':'tnew','l-new':'lnew','t-rev':'trev','l-rev':'lrev','t-cmp':'tcmp','l-cmp':'lcmp','t-tr':'ttr','l-tr':'ltr','t-em':'tem','l-em':'lem','t-cta':'tcta','l-cta':'lcta','c1':'c1','c2':'c2','f-about':'fabout','f-links':'flinks','f-priv':'fpriv','f-terms':'fterms','f-add':'fadd','f-contact':'fcontact','f-mail':'fmail','f-soc':'fsoc'};
+for(var id in m)$(id).textContent=t[m[id]];
+$('cats').innerHTML=t.cats.map(function(c,i){return '<button class="card cat" data-c="'+i+'" aria-pressed="'+(cat==i)+'"><span class="ic">'+ic(c[0])+'</span><b>'+c[1]+'</b><small>'+c[2]+'</small></button>'}).join('');
+var f=I.filter(function(x){var s=(x.n.join(' ')+' '+t.cats[x.c][1]+' '+t.cats[x.c][2]).toLowerCase();return(cat<0||x.c==cat)&&(!q||s.indexOf(q.toLowerCase())>-1)});
+$('listing').innerHTML=f.length?f.map(card).join(''):'<p class="empty">'+t.none+'</p>';
+$('newp').innerHTML=I.slice(-3).map(card).join('');
+$('revs').innerHTML=RV.map(function(r){return '<article class="card"><div class="row"><b>'+r.n[k]+'</b><span class="badge">'+t.demoB+'</span></div>'+stars(r.r)+'<p style="margin-top:4px">'+r.t[k]+'</p></article>'}).join('');
+$('cmps').innerHTML=C.map(function(c){var s=ST[c.s];return '<article class="card row"><b>'+c.n[k]+'</b><span class="'+s[2]+'">'+s[k]+'</span></article>'}).join('');
+$('trt').innerHTML='<tr>'+t.th.map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr>'+TR.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c[k]+'</td>'}).join('')+'</tr>'}).join('');
+$('ems').innerHTML=EM.map(function(e){return '<a href="tel:'+e[1]+'" aria-label="'+t.call+' '+e[1]+'">'+ic(e[0])+'<span><strong>'+e[1]+'</strong>'+e[2][k]+'</span></a>'}).join('');
+}
+$('cats').addEventListener('click',function(e){var b=e.target.closest('[data-c]');if(!b)return;var i=+b.dataset.c;cat=cat==i?-1:i;render();$('listing').scrollIntoView({block:'nearest'})});
+$('sf').addEventListener('submit',function(e){e.preventDefault();q=$('q').value.trim();cat=-1;render();$('listing').scrollIntoView({behavior:'smooth',block:'center'})});
+$('q').addEventListener('input',function(){if(!this.value){q='';render()}});
+$('lang').onclick=function(){L=L=='bn'?'en':'bn';render()};
+$('theme').onclick=function(){var d=document.documentElement,dark=d.dataset.theme?d.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;d.dataset.theme=dark?'light':'dark'};
+$('menu').onclick=function(){var o=$('nav').classList.toggle('open');this.setAttribute('aria-expanded',o)};
+$('nav').addEventListener('click',function(){this.classList.remove('open')});
+render();
+</script>
+</body>
+</html>
